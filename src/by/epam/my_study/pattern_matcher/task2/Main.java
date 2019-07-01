@@ -4,7 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /*
 Дана строка содержащая текст (xml).
-
+Напишите Анализатор, позволяющий последовательно возвращать содержимое узлов xml документа  его тип. Пользоваться
+готовыми парсерами XML нельзя.
  */
 public class Main {
     public static void main(String[] args){
@@ -18,10 +19,7 @@ public class Main {
         Pattern template = Pattern.compile("((?<open><[^/>]+?>)(?<body>.+?)(?<close></.+?>))|(?<openOnly><[^/>]+?>)|(?<closeOnly></.+?>)|(?<noBody><.+? />)|");
         Matcher findTeg = template.matcher(docXML);
 
-        /*
-        Pattern templateClose = Pattern.compile("</\\w+?>");
-        Matcher findClose = templateClose.matcher(docXML);
-        */
+
 
         while (findTeg.find()) {
             if (findTeg.group("open") != null && findTeg.group("close") != null) {
