@@ -26,9 +26,9 @@ public class Main {
                 System.out.println(" Открывающий тег: " + findTeg.group("open") + " закрывающий тег: " + findTeg.group("close") + " тело тега: " + findTeg.group("body"));
 
             }else if(findTeg.group("close") == null && findTeg.group("openOnly") != null){
-                System.out.println("Открывающий тег (корневой): " + findTeg.group("openOnly"));
+                System.out.println("Открывающий тег: " + findTeg.group("openOnly"));
             }else if(findTeg.group("open") == null && findTeg.group("closeOnly") != null) {
-                System.out.println("Закрывающий тег (корневой): " + findTeg.group("closeOnly"));
+                System.out.println("Закрывающий тег: " + findTeg.group("closeOnly"));
             }else if(findTeg.group("noBody") != null ){
                 System.out.println("Tег без тела: " + findTeg.group("noBody"));
             }
